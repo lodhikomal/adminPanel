@@ -20,26 +20,26 @@ function AdminPlanner() {
             <h3 className="logo-text">Disney+hotstar</h3>
           </div>
           <div className="button-container">
-            <button
-              type="button"
-              className={`movie-btn ${active == 1 ? "active" : ""}`}
-              onClick={() => handleClick(1)}
-            >
-              <FontAwesomeIcon icon={faVideo} className="icon" />
-              <NavLink to={"/"} className="navlink">
+            <NavLink to={"/"} className="navlink">
+              <button
+                type="button"
+                className={`movie-btn ${!active == 1 ? "active" : ""}`}
+                onClick={() => handleClick(1)}
+              >
+                <FontAwesomeIcon icon={faVideo} className="icon" />
                 <span className="movie-text"> Movies </span>
-              </NavLink>
-            </button>
-            <button
-              type="button"
-              className={`movie-btn ${active == 2 ? "active" : ""}`}
-              onClick={() => handleClick(2)}
-            >
-              <FontAwesomeIcon icon={faListUl} className="icon" />
-              <NavLink to={"/category"} className="navlink">
+              </button>
+            </NavLink>
+            <NavLink to={"/category"} className="navlink">
+              <button
+                type="button"
+                className={`movie-btn ${!active == 2 ? "active" : ""}`}
+                onClick={() => handleClick(2)}
+              >
+                <FontAwesomeIcon icon={faListUl} className="icon" />
                 <span className="movie-text">Category</span>
-              </NavLink>
-            </button>
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>

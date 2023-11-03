@@ -64,13 +64,16 @@
   background: transparent;
   text-decoration: none;
 }
-.movie-btn.active {
+/* .movie-btn.active {
   background-color: #7016d0;
   color: #ffffff;
+} */
+a.active {
+  background-color: #7016d0;
 }
-.movie-btn:hover {
+/* .movie-btn:hover {
   background-color: #c09ae9;
-}
+} */
 
 .movie-text {
   text-decoration: none;
