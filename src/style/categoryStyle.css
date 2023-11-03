@@ -1,0 +1,8 @@
+.heading-text {
+  color: red;
+  height: 40px;
+  width: 300px;
+  position: absolute;
+  right: 30%;
+  top: 10%;
+}

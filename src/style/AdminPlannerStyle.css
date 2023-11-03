@@ -1,0 +1,104 @@
+/* .admin-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1fff;
+} */
+.admin-menu {
+  /* background-color: #ffffff; */
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  background-color: rgb(229, 229, 229);
+
+  /* border-right: 1px solid grey; */
+}
+.admin-logo {
+  /* background-color: aliceblue; */
+  /* height: auto; */
+  width: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+}
+.logo-img {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin-right: 3px;
+  /* padding: 10px; */
+}
+.logo-text {
+  color: #1d1fff;
+  cursor: pointer;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  flex: start;
+  padding: 40px;
+  width: 180px;
+  gap: 10px;
+  border-top: 1px solid rgb(238, 235, 235);
+  border-bottom: 1px solid rgb(238, 235, 235);
+}
+
+.movie-btn {
+  height: 40px;
+  width: 200px;
+  border: none;
+  /* background-color: #7016d0; */
+  border-radius: 3px;
+  cursor: pointer;
+  color: #57595c;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  text-decoration: none;
+}
+.movie-btn.active {
+  background-color: #7016d0;
+  color: #ffffff;
+}
+.movie-btn:hover {
+  background-color: #c09ae9;
+}
+
+.movie-text {
+  text-decoration: none;
+  color: #57595c;
+}
+
+/* .movie-text:visited {
+  background-color: #1d1fff;
+} */
+.navlink {
+  text-decoration: none;
+}
+/* .active {
+  background-color: #1d1fff;
+} */
+
+.icon {
+  padding: 10px;
+  margin-right: 4px;
+}
+
+/* .table-container {
+  position: absolute;
+  right: 30%;
+  top: 10%;
+  /* background-color: #7016d0; */
+
+/* background-color: #1d1fff; */
+
+@media screen and (max-width: 768px) {
+}

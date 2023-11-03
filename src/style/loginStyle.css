@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.login {
+  display: flex;
+}
+.login-Container {
+  height: 55vw;
+  width: 50vw;
+  /* background-color: aqua; */
+  position: relative;
+  display: flex;
+}
+.login-form {
+  height: 500px;
+  width: 400px;
+  /* background-color: rgb(45, 150, 150); */
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+
+  /* padding-top: 30px; */
+}
+.login-img {
+  height: 55vw;
+  width: 50vw;
+}
+.loginImg {
+  height: 55vw;
+  width: 50vw;
+  object-fit: cover;
+}
+.logoImg {
+  height: 50px;
+  padding: 20px;
+  /* padding-left: 40px; */
+}
+.App-logo {
+  /* background-color: aliceblue; */
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-heading {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+.form-heading {
+  text-align: center;
+}
+.form-heading-h1 {
+  letter-spacing: 2px;
+}
+.form-para {
+  color: var(--font-color);
+}
+.form-main {
+  height: auto;
+  /* margin: 20px; */
+  /* background-color: blueviolet; */
+  padding: 20px;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-label {
+  color: var(--heading);
+  /* display: block; */
+  /* background-color: yellowgreen; */
+  font-size: 15px;
+  /* padding-bottom: 10px; */
+}
+/* .form-label-email {
+  padding-bottom: 10px;
+} */
+.form-input {
+  padding: 10px;
+  /* width: 90%; */
+  height: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.input-checkbox {
+  padding: 5px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.input-check {
+  border-radius: 5px;
+  margin-right: 4px;
+  color: var(--heading);
+  /* padding-left: 2px; */
+}
+.forget {
+  color: #b542d1;
+  opacity: 1;
+}
+.login-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.btn-submit {
+  background-color: #7016d0;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  letter-spacing: 0;
+  position: relative;
+  text-transform: capitalize;
+  border: none;
+}
+.google-button {
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  align-items: center;
+}
+.btn-para {
+  color: var(--heading);
+  font-size: 14px;
+  cursor: pointer;
+}
+.google-image {
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  .login {
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .login-img {
+    display: none;
+  }
+}
