@@ -1,24 +1,17 @@
-/* .admin-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  background-color: #1d1fff;
-} */
 .admin-menu {
   /* background-color: #ffffff; */
   height: 100vh;
-  width: 300px;
+  width: 25%;
   position: fixed;
   box-shadow: 10px 10px 5px #aaaaaa;
-  background-color: rgb(229, 229, 229);
+  background-color: #ffffff;
 
   /* border-right: 1px solid grey; */
 }
 .admin-logo {
   /* background-color: aliceblue; */
   /* height: auto; */
-  width: 250px;
+  width: 20%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -26,6 +19,7 @@
 
   padding: 5px;
 }
+
 .logo-img {
   height: 30px;
   width: 30px;
@@ -37,14 +31,18 @@
   color: #1d1fff;
   cursor: pointer;
 }
+.menu-icon-bars {
+  display: none;
+  color: #57595c;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-  flex: start;
-  padding: 40px;
-  width: 180px;
+
+  padding: 20px;
+  width: 80%;
   gap: 10px;
   border-top: 1px solid rgb(238, 235, 235);
   border-bottom: 1px solid rgb(238, 235, 235);
@@ -52,7 +50,8 @@
 
 .movie-btn {
   height: 40px;
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   border: none;
   /* background-color: #7016d0; */
   border-radius: 3px;
@@ -64,44 +63,60 @@
   background: transparent;
   text-decoration: none;
 }
-/* .movie-btn.active {
-  background-color: #7016d0;
-  color: #ffffff;
-} */
+
 a.active {
   background-color: #7016d0;
 }
-/* .movie-btn:hover {
-  background-color: #c09ae9;
-} */
+a.active .movie-text {
+  color: #ffffff;
+}
+a.active .icon {
+  color: #ffffff;
+}
 
 .movie-text {
   text-decoration: none;
   color: #57595c;
 }
 
-/* .movie-text:visited {
-  background-color: #1d1fff;
-} */
 .navlink {
   text-decoration: none;
 }
-/* .active {
-  background-color: #1d1fff;
-} */
 
 .icon {
   padding: 10px;
   margin-right: 4px;
+  color: #57595c;
 }
 
-/* .table-container {
-  position: absolute;
-  right: 30%;
-  top: 10%;
-  /* background-color: #7016d0; */
-
-/* background-color: #1d1fff; */
-
 @media screen and (max-width: 768px) {
+  .admin-menu {
+    width: 100%;
+    height: 20%;
+  }
+  .admin-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .button-container {
+  }
+  .admin-logo {
+    /* background-color: #9798db; */
+    margin: 0px;
+  }
+  .menu-icon-bars {
+    display: block;
+    color: #57595c;
+    width: 25px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .admin-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: #1d1fff; */
+  }
 }
