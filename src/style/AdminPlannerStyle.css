@@ -1,6 +1,6 @@
 .admin-menu {
   /* background-color: #ffffff; */
-  height: 100vh;
+  height: 100%;
   width: 25%;
   position: fixed;
   box-shadow: 10px 10px 5px #aaaaaa;
@@ -9,8 +9,6 @@
   /* border-right: 1px solid grey; */
 }
 .admin-logo {
-  /* background-color: aliceblue; */
-  /* height: auto; */
   width: 20%;
   margin: auto;
   display: flex;
@@ -27,6 +25,7 @@
   margin-right: 3px;
   /* padding: 10px; */
 }
+
 .logo-text {
   color: #1d1fff;
   cursor: pointer;
@@ -34,6 +33,7 @@
 .menu-icon-bars {
   display: none;
   color: #57595c;
+  cursor: pointer;
 }
 
 .button-container {
@@ -64,7 +64,7 @@
   text-decoration: none;
 }
 
-a.active {
+a.active button {
   background-color: #7016d0;
 }
 a.active .movie-text {
@@ -89,10 +89,11 @@ a.active .icon {
   color: #57595c;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .admin-menu {
     width: 100%;
-    height: 20%;
+    justify-content: space-around;
+    /* position: relative; */
   }
   .admin-container {
     display: flex;
@@ -100,9 +101,23 @@ a.active .icon {
     align-items: center;
     padding: 10px;
   }
-
-  .button-container {
+  .menu-open {
+    display: block;
   }
+  .button-container {
+    display: none;
+  }
+  a.active button {
+    background-color: #7016d0;
+  }
+
+  .show {
+    display: block;
+    margin: auto;
+
+    /* background-color: aqua; */
+  }
+
   .admin-logo {
     /* background-color: #9798db; */
     margin: 0px;
@@ -111,10 +126,12 @@ a.active .icon {
     display: block;
     color: #57595c;
     width: 25px;
+    font-size: 30px;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 424px) {
   .admin-container {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     /* background-color: #1d1fff; */

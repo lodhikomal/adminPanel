@@ -14,36 +14,45 @@ function AdminPlanner() {
   const handleClick = () => setToggle(!toggle);
 
   return (
-    <div>
-      <div className="admin-menu">
-        <div className="admin-container">
-          <div className="admin-logo">
-            <img src={adminLogo} alt="logo" className="logo-img"></img>
-            <h3 className="logo-text">Disney+hotstar</h3>
-          </div>
-          <div className="menu-icon-bars" onClick={handleClick}>
-            {toggle ? (
-              <FontAwesomeIcon icon={faXmark} className="menu-icon" />
-            ) : (
-              <FontAwesomeIcon icon={faBars} className="menu-icon" />
-            )}
-          </div>
+    <div className={`admin-menu ${toggle ? "menu-open" : ""}`}>
+      {/* <div className="admin-menu"> */}
+      <div className="admin-container">
+        <div className="admin-logo">
+          <img src={adminLogo} alt="logo" className="logo-img"></img>
+          <h3 className="logo-text">Disney+hotstar</h3>
         </div>
-        <div className="button-container">
-          <>
-            <NavLink to={"/"} className="navlink">
-              <button type="button" className="movie-btn">
-                <FontAwesomeIcon icon={faVideo} className="icon" />
-                <span className="movie-text"> Movies </span>
-              </button>
-            </NavLink>
-            <NavLink to={"/category"} className="navlink">
-              <button type="button" className="movie-btn">
-                <FontAwesomeIcon icon={faListUl} className="icon" />
-                <span className="movie-text">Category</span>
-              </button>
-            </NavLink>
-          </>
+
+        <div className="menu-icon-bars">
+          {toggle ? (
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="menu-icon-cancel"
+              onClick={handleClick}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faBars}
+              className="menu-icon-btn"
+              onClick={handleClick}
+            />
+          )}
+        </div>
+      </div>
+      {/* <div className="button-container"> */}
+      <div className={`button-container ${toggle ? "show" : ""}`}>
+        <div>
+          <NavLink to={"/"} className="navlink">
+            <button type="button" className="movie-btn">
+              <FontAwesomeIcon icon={faVideo} className="icon" />
+              <span className="movie-text"> Movies </span>
+            </button>
+          </NavLink>
+          <NavLink to={"/category"} className="navlink">
+            <button type="button" className="movie-btn">
+              <FontAwesomeIcon icon={faListUl} className="icon" />
+              <span className="movie-text">Category</span>
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>

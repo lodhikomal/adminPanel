@@ -1,9 +1,8 @@
 .layout .table-heading {
-  margin-top: 30px;
+  margin-top: 65px;
   background-color: #ffffff;
-  height: 80vh;
-  width: 60%;
-  /* margin: auto; */
+
+  min-width: 675px;
   position: absolute;
   left: 30%;
   border-radius: 10px;
@@ -12,10 +11,9 @@
 }
 
 .table-container {
-  width: 80%;
+  width: 60%;
   border-collapse: collapse;
   height: 40px;
-  width: 90%;
   border: 1px solid #e5e7eb;
   margin: 20px auto;
   border-radius: 5px;
@@ -38,7 +36,7 @@
 }
 .table-row {
   display: table-row;
-  vertical-align: inherit;
+
   background-color: rgb(248 249 250);
 }
 th {
@@ -60,27 +58,80 @@ td {
   white-space: nowrap;
   display: table-cell;
   vertical-align: inherit;
+  color: black;
 }
 tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-@media screen and (max-width: 768px) {
+.table-btn {
+  /* background-color: #1d1fff; */
+  right: 20%;
+  margin-top: 17px;
+  position: absolute;
+  width: 60px;
+  border: 0px solid #e5e7eb;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  background: #7016d0;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-add {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  color: #ffffff;
+  font-size: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.action-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+}
+.action-icon {
+  color: #7016d0;
+}
+@media screen and (max-width: 767px) {
   .table-container {
     font-size: 14px;
-    width: 100%;
+    width: 80%;
   }
   .layout .table-heading {
+    position: relative;
+    left: 0;
     width: 100%;
-    left: 0px;
-    top: 40px;
+    margin: auto;
+  }
+  .table-up {
+    width: 80%;
+    margin: auto;
+  }
+  th {
+    /* font-size: 10px; */
+    padding-right: 0px;
+    padding-left: 1 rem;
+    white-space: wrap;
+  }
+
+  .table-btn {
+    position: relative;
+    /* right: inherit; */
+    /* width: 60%; */
+    margin: auto;
+    margin-top: 70px;
+    left: 60%;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 424px) {
   .layout .table-heading {
-    /* background-color: aqua; */
     top: 15%;
     padding: 10px;
-    width: 100%;
+    margin: 20px auto;
   }
   th {
     padding-left: 0;

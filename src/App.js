@@ -10,11 +10,11 @@ import Layout from "./component/Layout";
 function App() {
   return (
     <div className="App">
-      {/* <Login /> */}
       <Router>
         {/* <AdminPlanner /> */}
         <Routes>
           <Route path="/" element={<Movie />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/category" element={<Category />} />
         </Routes>
       </Router>

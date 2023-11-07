@@ -48,12 +48,14 @@
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 400;
+  color: #000;
 }
 .form-heading {
   text-align: center;
 }
 .form-heading-h1 {
   letter-spacing: 2px;
+  color: #000;
 }
 .form-para {
   color: var(--font-color);
