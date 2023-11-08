@@ -57,9 +57,28 @@ td {
   padding-right: 1.5rem;
   white-space: nowrap;
   display: table-cell;
-  vertical-align: inherit;
+
   color: black;
 }
+td img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.description {
+  max-width: 100px; /* Set the maximum width for this specific cell */
+  overflow: hidden; /* Hide content that overflows the cell */
+  /* white-space: nowrap; Prevent text from wrapping */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+.subTitle {
+  max-width: 100px; /* Set the maximum width for this specific cell */
+  overflow: hidden; /* Hide content that overflows the cell */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis;
+}
+
 tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }

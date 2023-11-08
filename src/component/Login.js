@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/loginStyle.css";
 import loinImg from "../assets/image/login.png";
 import appLogo from "../assets/image/favicon.svg";
 import googleImg from "../assets/image/google.svg";
-import firebase from "./firebase.js";
-import { auth } from "firebase/auth";
-// import { async } from "@firebase/";
+import { provider, auth, db } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 function Login() {
+  const [data, setdata] = useState([]);
+  const navigate = useNavigate();
   const handleAuth = async () => {
     try {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      await auth.signInWithPopup(provider);
-      // User signed in with Google successfully
+      let res = await signInWithPopup(auth, provider);
+      navigate("/movie");
     } catch (error) {
-      // Handle errors
       console.error(error.message);
     }
   };

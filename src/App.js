@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Movie from "./component/Movie";
 import Category from "./component/Category";
 import Layout from "./component/Layout";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
       <Router>
         {/* <AdminPlanner /> */}
         <Routes>
-          <Route path="/" element={<Movie />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/movie" element={<Movie />} />
           <Route path="/category" element={<Category />} />
         </Routes>
       </Router>

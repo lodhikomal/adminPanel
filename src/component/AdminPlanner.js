@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+
 function AdminPlanner() {
   const [toggle, setToggle] = useState(false);
 
@@ -41,7 +42,7 @@ function AdminPlanner() {
       {/* <div className="button-container"> */}
       <div className={`button-container ${toggle ? "show" : ""}`}>
         <div>
-          <NavLink to={"/"} className="navlink">
+          <NavLink to={"/movie"} className="navlink">
             <button type="button" className="movie-btn">
               <FontAwesomeIcon icon={faVideo} className="icon" />
               <span className="movie-text"> Movies </span>
