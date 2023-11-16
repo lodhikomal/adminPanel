@@ -1,0 +1,22 @@
+.form-container {
+  position: absolute;
+  top: 125px;
+  left: 25%;
+  display: flex;
+  /* box-shadow: 10px 10px 5px #aaaaaa; */
+}
+.container {
+  width: 80%;
+}
+
+.row {
+  justify-content: center;
+  column-gap: 10px;
+}
+label.form-label {
+  color: rgb(101, 103, 105);
+}
+
+/* .input {
+  width: 50%;
+} */
