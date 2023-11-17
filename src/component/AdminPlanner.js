@@ -48,12 +48,12 @@ function AdminPlanner() {
               <span className="movie-text"> Movies </span>
             </button>
           </NavLink>
-          <NavLink to={"/category"} className="navlink">
+          {/* <NavLink to={"/category"} className="navlink">
             <button type="button" className="movie-btn">
               <FontAwesomeIcon icon={faListUl} className="icon" />
               <span className="movie-text">Category</span>
             </button>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </div>
