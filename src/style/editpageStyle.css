@@ -3,10 +3,13 @@
   top: 125px;
   left: 25%;
   display: flex;
-  /* box-shadow: 10px 10px 5px #aaaaaa; */
+  border-color: blue;
 }
 .container {
   width: 80%;
+  border: 0px solid rgb(73, 72, 73);
+  padding: 10px;
+  box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .row {
@@ -16,7 +19,40 @@
 label.form-label {
   color: rgb(101, 103, 105);
 }
-
+.error {
+  margin: 8px;
+  font-size: 13px;
+  color: red;
+}
+.error-border {
+  border-color: red;
+}
+.drop-down {
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown.dropdown {
+  width: 50%;
+}
+button#dropdown-basic {
+  /* background-color: #1d1fff; */
+  text-align: left;
+  border: none;
+}
+.column {
+  /* background-color: red; */
+  width: 84%;
+  padding: 10px;
+}
+.button {
+  /* background-color: aquamarine; */
+  width: fit-content;
+  height: fit-content;
+}
+.select {
+  /* border: 1px solid red; */
+  margin-left: -123px;
+}
 /* .input {
   width: 50%;
 } */
