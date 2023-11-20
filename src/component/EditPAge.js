@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 // import { async } from "@firebase/util";
 import { useFormik } from "formik";
 import { formSchema } from "./FormSchema";
+import PaginationComponent from "./Pagination";
 
 function EditPAge() {
   const { id } = useParams();
@@ -267,34 +268,6 @@ function EditPAge() {
             <Button variant="primary" type="submit" className="button">
               Submit
             </Button>
-
-            {/* <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle
-                    variant="success"
-                    id="dropdown-basic"
-                    className={`dropdown ${
-                      errors.type && touched.type ? "error-border" : ""
-                    }`}
-                    value={values.type}
-                  >
-                    Type
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">New</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Trending</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">New Disney</Dropdown.Item>
-                    <Dropdown.Item href="#/action-4">Original</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                {touched.type && errors.type ? (
-                  <div className="error">{errors.type}</div>
-                ) : null}
-              </Form.Group> */}
           </Row>
         </Container>
       </Form>

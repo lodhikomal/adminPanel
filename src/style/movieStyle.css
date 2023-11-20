@@ -115,6 +115,11 @@ tbody tr:nth-child(even) {
 .action-icon {
   color: #7016d0;
 }
+/* .container-item {
+  display: flex;
+  background-color: #7016d0;
+  flex-direction: column;
+} */
 @media screen and (max-width: 767px) {
   .table-container {
     font-size: 14px;

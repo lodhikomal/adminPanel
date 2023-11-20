@@ -15,17 +15,31 @@ import { doc, deleteDoc } from "firebase/firestore";
 import ReactModals from "./ReactModals";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import PaginationComponent from "./Pagination";
 // import { useParams } from "react-router-dom";
 
 function Movie() {
-  // console.log(id, "check");
-  const [show, setShow] = useState(false);
-  const [deleteId, setDeleteId] = useState(null);
-  // const [selectedId, setSelectedId] = useState(null);
-
   const handleClose = () => setShow(false);
   const dispatch = useDispatch();
   const movie = useSelector(selectMovie);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5);
+
+  const [show, setShow] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+  const [showPost, setShowPost] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
+
+  // const data = movie.from({ length: 30 }, (_, index) => `Item ${index + 1}`);
+  // console.log(data, "dta");
+  const indexOfLastItem = currentPage * itemsPerPage;
+  console.log(indexOfLastItem, "last");
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  console.log(indexOfFirstItem, "first");
+  const currentItems = movie.slice(indexOfFirstItem, indexOfLastItem);
+  console.log(currentItems, "current");
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   const fetchData = async () => {
     const querySnapshot = await getDocs(collection(db, "data"));
     const newData = [];
@@ -37,7 +51,7 @@ function Movie() {
       newData.push(obj);
     });
     dispatch(setMovie(newData));
-    // console.log(newData, "search");
+    console.log(newData, "search");
   };
   useEffect(() => {
     fetchData();
@@ -64,82 +78,90 @@ function Movie() {
   return (
     <>
       <Layout>
-        <Link to="/add">
-          <div className="table-btn ">
-            <button type="submit" className="btn-add">
-              Add
-            </button>
-          </div>
-        </Link>
-        <div className="table-heading">
-          <div className="table-up">
-            <h3>Movie Panel</h3>
+        <div className="container-item">
+          <Link to="/add">
+            <div className="table-btn ">
+              <button type="submit" className="btn-add">
+                Add
+              </button>
+            </div>
+          </Link>
+          <div className="table-heading">
+            <div className="table-up">
+              <h3>Movie Panel</h3>
 
-            <input
-              type="text"
-              className="searchbar"
-              placeholder="Search.."
-            ></input>
-          </div>
-          <table className="table-container">
-            <thead>
-              <tr className="table-row">
-                <th>Sr.no</th>
-                {/* <th>BackgroundImage</th> */}
-                <th>CardImage</th>
-                <th>Description</th>
-                {/* <th>subTitle</th> */}
-                <th>Title</th>
-                {/* <th>titleImg</th> */}
-                <th>Type</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {movie.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    {/* <td>
+              <input
+                type="text"
+                className="searchbar"
+                placeholder="Search.."
+              ></input>
+            </div>
+            <table className="table-container">
+              <thead>
+                <tr className="table-row">
+                  <th>Sr.no</th>
+                  {/* <th>BackgroundImage</th> */}
+                  <th>CardImage</th>
+                  <th>Description</th>
+                  {/* <th>subTitle</th> */}
+                  <th>Title</th>
+                  {/* <th>titleImg</th> */}
+                  <th>Type</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentItems.map((item, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      {/* <td>
                       <img
-                        src={item.backgroundImg}
-                        alt="image"
-                        className="back-img"
+                      src={item.backgroundImg}
+                      alt="image"
+                      className="back-img"
                       ></img>
                     </td> */}
-                    <td>
-                      <img src={item.cardImg} alt=""></img>
-                    </td>
-                    <td className="description">{item.description}</td>
-                    {/* <td className="subTitle">{item.subTitle} </td> */}
-                    <td className="subTitle">{item.title}</td>
-                    {/* <td><img src={item.titleImg}></img></td> */}
-                    <td>{item.type}</td>
-                    <td>
-                      <div className="action-container">
-                        <Link to={`/edit/${item.id}`}>
-                          <FontAwesomeIcon
-                            icon={faPenToSquare}
-                            className="action-icon"
-                            onClick={handleEdit}
-                          />
-                        </Link>
+                      <td>
+                        <img src={item.cardImg} alt=""></img>
+                      </td>
+                      <td className="description">{item.description}</td>
+                      {/* <td className="subTitle">{item.subTitle} </td> */}
+                      <td className="subTitle">{item.title}</td>
+                      {/* <td><img src={item.titleImg}></img></td> */}
+                      <td>{item.type}</td>
+                      <td>
+                        <div className="action-container">
+                          <Link to={`/edit/${item.id}`}>
+                            <FontAwesomeIcon
+                              icon={faPenToSquare}
+                              className="action-icon"
+                              onClick={handleEdit}
+                            />
+                          </Link>
 
-                        <FontAwesomeIcon
-                          icon={faTrash}
-                          className="action-icon"
-                          // onClick={() => setShow(true)}
-                          onClick={() => handleDelete(item.id)}
-                        />
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                          <FontAwesomeIcon
+                            icon={faTrash}
+                            className="action-icon"
+                            // onClick={() => setShow(true)}
+                            onClick={() => handleDelete(item.id)}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <PaginationComponent
+              itemsPerPage={itemsPerPage}
+              totalItems={movie.length}
+              paginate={paginate}
+            />
+          </div>
+
+          <ReactModals show={show} delete={confirmDelete} hide={handleClose} />
         </div>
-        <ReactModals show={show} delete={confirmDelete} hide={handleClose} />
       </Layout>
     </>
   );

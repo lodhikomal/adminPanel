@@ -1,0 +1,24 @@
+/* App.css */
+.pagination {
+  display: flex;
+  justify-content: right;
+  width: 90%;
+  list-style: none;
+  padding: 0;
+}
+
+.page-item {
+  margin-right: 5px;
+}
+
+.page-link {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+}
+
+.page-link:hover {
+  background-color: #f4f4f4;
+}
