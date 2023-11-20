@@ -7,7 +7,7 @@ export const formSchema = Yup.object().shape({
   cardImg: Yup.string().url("must be a url").required("please fill this field"),
   description: Yup.string().min(10).max(25).required("please fill this field"),
   subTitle: Yup.string().min(10).max(25).required("please fill this field"),
-  title: Yup.string().min(4).max(10).required("please fill this field"),
+  title: Yup.string().required("please fill this field"),
   titleImg: Yup.string()
     .url("must be a url")
     .required("please fill this field"),

@@ -15,7 +15,7 @@ import { formSchema } from "./FormSchema";
 
 function EditPAge() {
   const { id } = useParams();
-  console.log(id, "check");
+  // console.log(id, "check");
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     backgroundImg: "",
@@ -27,43 +27,45 @@ function EditPAge() {
     type: "",
   });
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (id) {
-  //     await setDoc(doc(db, "data", id), formData);
-  //   } else {
-  //     await addDoc(collection(db, "data"), formData);
-  //   }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (id) {
+      await setDoc(doc(db, "data", id), values);
+    } else {
+      await addDoc(collection(db, "data"), values);
+    }
 
-  //   toast.success("Your Data is Succesfully Add in Database!", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //   });
-  //   console.log(formData);
-  //   navigate("/movie");
+    toast.success("Your Data is Succesfully Add in Database!", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+    console.log(values, "sdsf");
+    navigate("/movie");
 
-  //   setFormData({
-  //     backgroundImg: "",
-  //     cardImg: "",
-  //     description: "",
-  //     subTitle: "",
-  //     title: "",
-  //     titleImg: "",
-  //     type: "",
-  //   });
-  // };
+    setFormData({
+      backgroundImg: "",
+      cardImg: "",
+      description: "",
+      subTitle: "",
+      title: "",
+      titleImg: "",
+      type: "",
+    });
+  };
   const {
     values,
     errors,
     handleChange,
     handleBlur,
-    handleSubmit,
+
     touched,
     setValues,
   } = useFormik({
+    enableReinitialize: true,
     initialValues: formData,
     validationSchema: formSchema,
     onSubmit: (values, action) => {
       console.log(values, "value");
+
       action.resetForm();
       navigate("/movie");
     },
@@ -75,7 +77,7 @@ function EditPAge() {
   //     [name]: value,
   //   });
   // };
-  console.log(errors.backgroundImg, "error");
+  // console.log(errors.backgroundImg, "error");
 
   const fetchData = async () => {
     const documentRef = doc(db, "data", id);
@@ -85,8 +87,9 @@ function EditPAge() {
       const docSnapshot = await getDoc(documentRef);
       if (docSnapshot.exists()) {
         const data = docSnapshot.data();
-        // console.log(data, "hhhh");
         setValues(data);
+        // setFormData(values);
+        console.log(values, "hhhh");
       } else {
         console.log("No such document!");
       }
@@ -99,7 +102,7 @@ function EditPAge() {
       fetchData();
     }
   }, [id]);
-  console.log(values, "value");
+  // console.log(values, "value");
 
   return (
     <Layout>
@@ -236,8 +239,8 @@ function EditPAge() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {touched.title && errors.title ? (
-                  <div className="error">{errors.title}</div>
+                {touched.titleImg && errors.titleImg ? (
+                  <div className="error">{errors.titleImg}</div>
                 ) : null}
               </Form.Group>
             </Col>
