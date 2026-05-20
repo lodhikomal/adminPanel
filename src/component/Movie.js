@@ -27,8 +27,6 @@ function Movie() {
 
   const [show, setShow] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
-  const [showPost, setShowPost] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
 
   // const data = movie.from({ length: 30 }, (_, index) => `Item ${index + 1}`);
   // console.log(data, "dta");
@@ -55,6 +53,7 @@ function Movie() {
   };
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const handleDelete = async (id) => {
@@ -62,7 +61,7 @@ function Movie() {
     setDeleteId(id);
   };
   const confirmDelete = async () => {
-    let res = await deleteDoc(doc(db, "data", deleteId));
+    await deleteDoc(doc(db, "data", deleteId));
     setShow(false);
     fetchData();
     showToastMessage();

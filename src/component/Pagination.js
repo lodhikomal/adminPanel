@@ -14,6 +14,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
       <ul className="pagination">
         {pageNumbers.map((number) => (
           <li key={number} className={`page-item ${number === currentPage ? "active" : ""}`}>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a onClick={(e) => { e.preventDefault(); paginate(number); }} href="#" className="page-link">
               {number}
             </a>
