@@ -86,6 +86,31 @@ function Movie() {
               </button>
             </div>
           </Link>
+          <div className="stats-container">
+            <div className="stat-card">
+              <div className="stat-value">{movie.length}</div>
+              <div className="stat-label">Total Titles</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">
+                {movie.filter((item) => item.type === "1" || item.type === "New" || item.type === "New Disney").length}
+              </div>
+              <div className="stat-label">New Releases</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">
+                {movie.filter((item) => item.type === "2" || item.type === "Trending").length}
+              </div>
+              <div className="stat-label">Trending</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">
+                {movie.filter((item) => item.type === "3" || item.type === "Recommend").length}
+              </div>
+              <div className="stat-label">Recommended</div>
+            </div>
+          </div>
+
           <div className="table-heading">
             <div className="table-up">
               <h3>Movie Panel</h3>
@@ -157,6 +182,7 @@ function Movie() {
               itemsPerPage={itemsPerPage}
               totalItems={movie.length}
               paginate={paginate}
+              currentPage={currentPage}
             />
           </div>
 

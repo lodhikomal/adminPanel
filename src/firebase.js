@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 // import firebase from "firebase/app";
 // import "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyCanXPlxnE9Qur8Gk06QZXRU24Xbhmqo3w",
-  authDomain: "newdisneyself.firebaseapp.com",
-  projectId: "newdisneyself",
-  storageBucket: "newdisneyself.appspot.com",
-  messagingSenderId: "515855049457",
-  appId: "1:515855049457:web:8e0d0533d8e5c2356dff50",
-  measurementId: "G-5X1BGCV5Y9",
+  apiKey: "AIzaSyBDlG1e4EPIHpMuoAMVS5jAOsgI1CvuhbM",
+  authDomain: "admin-panel-972b4.firebaseapp.com",
+  projectId: "admin-panel-972b4",
+  storageBucket: "admin-panel-972b4.firebasestorage.app",
+  messagingSenderId: "247909740583",
+  appId: "1:247909740583:web:144786ab694beaf9c29e02",
+  measurementId: "G-JF8VQCBP0T"
 };
 
 // Initialize Firebase

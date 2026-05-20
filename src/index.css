@@ -1,12 +1,113 @@
-body {
+:root {
+  --bg-primary: #0c111b;
+  --bg-secondary: #192133;
+  --bg-tertiary: #131a28;
+  --accent-blue: #1f80e0;
+  --accent-blue-hover: #1562b3;
+  --accent-purple: #7016d0;
+  --accent-purple-hover: #590fb0;
+  --text-primary: #ffffff;
+  --text-secondary: #8f98a9;
+  --text-muted: #566681;
+  --border-color: #222d42;
+  --glass-bg: rgba(25, 33, 51, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --font-family: 'Outfit', 'Inter', sans-serif;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  font-family: "Poppins", sans-serif;
-  /* background-color: #e5e5e5; */
-  box-sizing: border-box;
+  font-family: var(--font-family);
 }
-:root {
-  --font-color: #928b85;
-  --heading: #7180af;
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 6px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Bootstrap Modal Customizations */
+.modal-content {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.modal-header .btn-close {
+  filter: invert(1) grayscale(1) brightness(2) !important;
+}
+
+.modal-title {
+  font-weight: 600 !important;
+}
+
+.modal-body {
+  padding: 24px !important;
+  color: var(--text-secondary) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.modal-footer .btn-secondary {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.modal-footer .btn-primary {
+  background-color: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #ff7875 !important;
+  border-color: #ff7875 !important;
+  transform: translateY(-1px) !important;
 }

@@ -1,15 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 .layout {
   display: flex;
   position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {
   .layout {
     flex-direction: column;
-    line-height: 30px;
   }
 }
